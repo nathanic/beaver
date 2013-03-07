@@ -272,7 +272,8 @@ class FileConfig():
             'sincedb_write_interval': '15',
             'stat_interval': '1',
             'tags': '',
-            'type': ''
+            'type': '',
+            'encoding': 'utf_8'  # NPS: appropriate?
         }
 
         self._configfile = args.config
@@ -343,6 +344,14 @@ class FileConfig():
             config['type'] = file_type
         except:
             config['type'] = "file"
+
+        # not sure if we need this one
+        #try:
+            #self._logger.debug("Trying to read encoding config");
+            #encoding = config.get('encoding', '')
+            #config['encoding'] = encoding
+        #except:
+            #config['encoding'] = 'utf_8'
 
         return config
 

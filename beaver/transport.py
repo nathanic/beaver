@@ -89,6 +89,7 @@ class Transport(object):
             '@timestamp': timestamp,
             '@source_host': self._current_host,
             '@source_path': filename,
+            # this might be a reasonable place to make sure we're sending utf-8
             '@message': line.strip(os.linesep),
         })
 
